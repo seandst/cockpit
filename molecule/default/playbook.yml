@@ -1,0 +1,15 @@
+- hosts: cockpit_install
+  roles:
+    - oasis_roles.rhsm
+    - cockpit
+    - oasis_roles.firewalld
+  vars:
+    cockpit_version: cockpit-ovirt-dashboard
+    firewalld_zone: public
+    firewalld_ports_open:
+      - proto: tcp
+        port: 443
+    firewalld_ports_forward:
+      - proto: tcp
+        port: 443
+        to_port: 9090

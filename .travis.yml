@@ -1,5 +1,5 @@
 language: python
-versions:
+python:
   - "2.7"
   - "3.7"
 cache: pip
@@ -15,9 +15,8 @@ install:
   - ansible --version
 
 script:
-  - molecule lint -s openstack
-  - molecule test -s docker
   - flake8 $(find . -name '*.py')
+  - molecule lint
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/

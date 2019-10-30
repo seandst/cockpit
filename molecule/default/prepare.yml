@@ -6,8 +6,7 @@
     rhsm_username: "{{ lookup('env', 'OASIS_RHSM_USERNAME') }}"
     rhsm_password: "{{ lookup('env', 'OASIS_RHSM_PASSWORD') }}"
     rhsm_server_hostname: "{{ lookup('env', 'OASIS_RHSM_SERVER_HOSTNAME') }}"
-    rhsm_unregister: true
-    rhsm_auto_attach: true
+    rhsm_pool_ids: "{{ lookup('env', 'OASIS_RHSM_POOL_IDS') }}"
     rhsm_repositories:
       only:
         - rhel-7-server-rpms
